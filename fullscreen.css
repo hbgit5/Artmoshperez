@@ -1,0 +1,13 @@
+.city-box {
+    height:600px;
+    font-family: Kotta One;
+    background-image: url(paintings/sun2/George_Inness_003.jpg);}
+
+.city-opacity {
+    width:80%;
+    margin: auto;
+    background-color: rgba(255,255,255,.8);
+    border: 2px outset white;
+    border-radius: 4px;
+    margin-top:10%;
+}
