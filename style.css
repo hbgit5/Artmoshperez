@@ -2,6 +2,8 @@
        width: 100%;
        height: 100%;
        font-family: Kotta One;
+      
+      
    }
 
    .item img {
@@ -11,7 +13,7 @@
 
    #carousel {
        width: 100%;
-       height: 500px;
+       height: 60%;
        overflow: hidden;
    }
 
@@ -44,7 +46,7 @@
     margin: auto;
 }
 
-#add {
+#submitbutton {
     position: absolute;
     top:21px;
     right: 2px;
@@ -55,38 +57,42 @@
 }
 
 #hidden-template-container {
-    height:300px;
+    height:400px;
+    
 }
 
 .city-box {
     height:300px;
-    border-radius: 4px;
     text-align: center;
     font-family: Kotta One;
-    margin-top:20px;
-    background-image: url(paintings/wind1/Gustave_Courbet_-_The_Gust_of_Wind_-_Google_Art_Project.jpg);
     overflow: hidden;
+    position:absolute;
+    top: 18%;
+    left: 17%;
+    width: 67%;
+    height: 68%;
+    z-index: -1;
 }
 
-p {
-    
-}
 
 h2 {
     font-style: bold;
+    font-size:15px;
 }
 
-.item {
-    
-}
+
 
 .city-opacity {
-    width:80%;
-    margin: auto;
-    background-color: rgba(255,255,255,.8);
-    border: 2px outset white;
-    border-radius: 4px;
-    margin-top:10%;
+width: 40%;
+margin: auto;
+background-color: rgba(255,255,255,.6);
+border: 1px outset white;
+border-radius: 4px;
+position: absolute;
+top: 19%;
+font-family: kotta one;
+left: 30%;
+text-align: center;
 }
 
 
@@ -96,4 +102,74 @@ h2 {
 
 #weather_city::-moz-placeholder {
     font-family: Kotta One;
+}
+img/img/Albert_Bierstadt_-_Wind_River_Country_-_Google_Art_Project.jpg
+footer {
+    
+}
+
+.footer_info {
+    width:100%;
+    height:10%;
+    position:absolute;
+    bottom:0px;
+    background-color: rgba(220,235,231,.8);
+    margin-top:20px;
+    font-family: kotta one;
+    text-align: center;
+    color:#3B3F41;
+}
+
+.footer_info p {
+    margin:5px;
+    
+}
+
+
+
+.city-box .fa-cog {
+    font-size: 75px;
+    margin-top: 110px;
+}
+
+.delete_button {
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    background-color:transparent;
+    border:transparent;
+}
+#loading-box-template{
+color: #808A8A;
+    font-family: kotta one;
+    height:400px;
+
+
+}
+
+
+.small-classy-frame {
+    width:100%;
+    height:100%;
+    z-index: -1;
+}
+
+.city-opacity-main {
+    z-index: 1;
+}
+
+#city-box-template {
+    position:relative;
+}
+
+.small-frame {
+    position: relative;
+}
+
+
+
+.city-opacity a {
+    color:#300000; 
+    text-decoration: none;
+    
 }

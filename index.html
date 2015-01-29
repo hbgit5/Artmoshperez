@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="style.css">
     <link href='http://fonts.googleapis.com/css?family=Kotta+One' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    
-        <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
-<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+    <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-    
+
 </head>
 
 <body>
@@ -21,13 +21,14 @@
             <img src="img/logocleardk.png">
             <div id="weather_status_form">
                 <label for="city"></label>
-
-                <input type=text class="form-control city_names"name="city_names" placeholder="Enter city name here" />
-                </br>
-                <!--<label for="units">Units</label>
-                <input type="radio" id="units_metric" name="units" value="metric" />Metric
-                <input type="radio" id="units_imperial" name="units" value="imperial" />Imperial</br>-->
-                <button type="submit" id="add">+</button>
+                <form id="location-form">
+                    <input type=text class="form-control city_names" name="city_names" placeholder="Enter City, State or Country here" />
+                    <br/>
+                    <!--<label for="units">Units</label>
+                    <input type="radio" id="units_metric" name="units" value="metric" />Metric
+                    <input type="radio" id="units_imperial" name="units" value="imperial" />Imperial</br>-->
+                    <button type="submit" id="submitbutton">+</button>
+                </form>
             </div>
         </div>
 
@@ -43,31 +44,31 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <img src="paintings/clouds1/Albert_Bierstadt_-_Wind_River_Country_-_Google_Art_Project.jpg">
+                <img src="img/Hiroshige16_kanbara.jpg">
                 <div class="carousel-caption">
 
                 </div>
             </div>
             <div class="item">
-                <img src="paintings/sun1/Baigneurs_a_Asnieres.jpg">
+                <img src="img/Gustave_Courbet_-_The_Gust_of_Wind_-_Google_Art_Project.jpg">
                 <div class="carousel-caption">
 
                 </div>
             </div>
             <div class="item">
-                <img src="paintings/gray1/Albert_Bierstadt_-_California_Spring_-_Google_Art_Project.jpg">
+                <img src="img/George_Inness_003.jpg">
                 <div class="carousel-caption">
 
                 </div>
             </div>
             <div class="item">
-                <img src="paintings/snow1/Winter_landscape_Paul_Gauguin.jpg">
+                <img src="img/David_Cox_-_Shepherding_the_Flock,_Windy_Day_-_Google_Art_Project.jpg">
                 <div class="carousel-caption">
 
                 </div>
             </div>
             <div class="item">
-                <img src="paintings/wind2/David_Cox_-_Shepherding_the_Flock,_Windy_Day_-_Google_Art_Project.jpg">
+                <img src="img/Baigneurs_a_Asnieres.jpg">
                 <div class="carousel-caption">
 
                 </div>
@@ -87,40 +88,51 @@
 
     <!--Div Classes To Be appended when City is called"-->
 
-
-
-
-
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-6 col-md-4" id="hidden-template-container" style="display: none;">
-                <div class="city-box">
-                    <div class="city-opacity main">
-                        <h2><span class="city"></span></h2>
-                        <h4><span class="country"></span></h4>
-                        <div class="message" id="weather_description">
-
-                        </div>
-                        <div class="temp" id="weather_temp"></div>
-
-                        <p><a href="#">SEVEN DAY FORECAST</a>
-                        </p>
-
-
-
-                    </div>
-
-
-                </div>
-            </div>
-
-
+        <div class="row" id="city-box-container">
+            
         </div>
     </div>
-  <script src="weather.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
-  
+
+    <div id="hidden-template-container" style="display: none;">
+        <div id="city-box-template">
+            <div class="small-frame">
+                
+                <img src="img/smallframe.svg">
+                <div class="city-box">
+
+                </div>
+                <div class="city-opacity main">
+                    <button class="delete_button"><i class="fa fa-times-circle-o"></i>
+                    </button>
+                    <h2><span class="city">{CITY}</span></h2>
+                    <h4><span class="country">{COUNTRY}</span></h4>
+                    <img src="http://openweathermap.org/img/w/{ICON}.png" />
+                    <div class="message" id="weather_description">
+                        {DESC}
+                    </div>
+                    <div class="temp" id="weather_temp">{TEMP} &#176;F</div>
+                    <p><a href="fullscreen_test.html?id={LOC_ID}&loc={LOC}">GET MORE ART!</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="loading-box-template">
+            <div class="col-xs-6 col-md-4">
+                <i class="fa fa-cog fa-spin"></i>
+                <p>Loading...</p>
+
+            </div>
+        </div>
+    </div>
+    <!--<footer class="footer_info">
+        <p>Learn about our App in the iTunes Store</p>
+        <p>copyright &copy;</p>
+        <img src="#"/>
+        
+    </footer>-->
+    <script src="weather.js"></script>
 
 </body>
 
